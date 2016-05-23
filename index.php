@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ejemplo Materialize</title>
+    <title>Pokedex</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link rel="icon" type="image/png" href="http://wahackforo.com/images/smilies/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
@@ -24,14 +25,6 @@
               <h3>Tipos Elementales</h3>
               <h5 class="light grey-text text-lighten-3">Aprende sobre los tipos de Pokemon</h5>
               <a class="waves-effect waves-light btn blue" href="tipos.php"><i class="material-icons left">input</i>Comenzar Ahora</a>
-            </div>
-          </li>
-          <li>
-            <img src="http://img09.deviantart.net/90ef/i/2013/063/d/2/minimalist_wallpaper___rainbow_badge_by_flameblazegx-d5wzzqs.jpg"> <!-- random image -->
-            <div class="caption right-align">
-              <h3>Medallas</h3>
-              <h5 class="light grey-text text-lighten-3">Las medallas de todas las generaciones</h5>
-              <a class="waves-effect waves-light btn blue" href="medallas.php"><i class="material-icons left">input</i>Comenzar Ahora</a>
             </div>
           </li>
         </ul>

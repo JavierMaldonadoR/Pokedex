@@ -1,8 +1,8 @@
 <?php
 // conectar
-$m = new MongoClient();
+$m = new MongoClient( "mongodb://root:root@ds019482.mlab.com:19482/pokemon");
 // seleccionar una base de datos
-$db = $m->Pokemon;
+$db = $m->pokemon;
 // seleccionar una colección (equivalente a una tabla en una base de datos relacional)
 $colección = $db->Pokedex;
 
@@ -19,3 +19,5 @@ $newdata = array('$set' => array("nombre" => $nombre,
                                  "evolucion" => $evolucion,
                                  "imagen" => $imagen));
 $colección->update(array("numero" => $numero), $newdata);
+
+header('Location: Pokedex.php?accion=2');
