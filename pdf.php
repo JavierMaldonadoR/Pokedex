@@ -21,15 +21,17 @@
     }
 }
     //conectar
-    $m = new MongoClient();
+    $m = new MongoClient( "mongodb://root:root@ds019482.mlab.com:19482/pokemon");
 
     // seleccionar una base de datos
-    $db = $m->Pokemon;
+    $db = $m->pokemon;
 
     // seleccionar una colección (equivalente a una tabla en una base de datos relacional)
     $colección = $db->Pokedex;
     // encontrar todo lo que haya en la colección
     $cursor = $colección->find();
+
+    ini_set('max_execution_time', 3000);
     
     switch ($_GET['orden']) {
                   case 'numero':
@@ -80,29 +82,65 @@
         $pdf->Ln();
     }
 
-    function setTypes($type){
+function setTypes($type){
         switch ($type) {
-            case 'PLANTA':
-                $url="http://vignette3.wikia.nocookie.net/es.pokemon/images/d/d6/Tipo_planta.gif/revision/latest?cb=20140127195157";
-                break;
-            case 'VENENO':
-                $url="http://vignette3.wikia.nocookie.net/es.pokemon/images/1/10/Tipo_veneno.gif/revision/latest?cb=20140127195142";
-                break;
-            case 'FUEGO':
-                $url="http://vignette1.wikia.nocookie.net/es.pokemon/images/c/ce/Tipo_fuego.gif/revision/latest?cb=20140127195210";
-                break;
-            case 'VOLADOR':
-                $url="http://vignette3.wikia.nocookie.net/es.pokemon/images/e/e1/Tipo_volador.gif/revision/latest?cb=20140127195141";
-                break;
-            case 'AGUA':
-                $url="http://vignette4.wikia.nocookie.net/es.pokemon/images/9/94/Tipo_agua.gif/revision/latest?cb=20140127195223";
-                break;
-            case 'N/A':
-                $url="http://chk.edu.mx/2012/images/FONDO%20BLANCO%20NUEVO.gif";
-                break;
+        case 'PLANTA':
+        $url="http://vignette3.wikia.nocookie.net/es.pokemon/images/d/d6/Tipo_planta.gif/revision/latest?cb=20140127195157";
+        break;
+        case 'VENENO':
+        $url="http://vignette3.wikia.nocookie.net/es.pokemon/images/1/10/Tipo_veneno.gif/revision/latest?cb=20140127195142";
+        break;
+        case 'FUEGO':
+        $url="http://vignette1.wikia.nocookie.net/es.pokemon/images/c/ce/Tipo_fuego.gif/revision/latest?cb=20140127195210";
+        break;
+        case 'VOLADOR':
+        $url="http://vignette3.wikia.nocookie.net/es.pokemon/images/e/e1/Tipo_volador.gif/revision/latest?cb=20140127195141";
+        break;
+        case 'AGUA':
+        $url="http://vignette4.wikia.nocookie.net/es.pokemon/images/9/94/Tipo_agua.gif/revision/latest?cb=20140127195223";
+        break;
+        case 'ACERO':
+        $url="http://vignette3.wikia.nocookie.net/es.pokemon/images/d/d9/Tipo_acero.gif/revision/latest?cb=20140127195225";
+        break;
+        case 'BICHO':
+        $url="http://vignette1.wikia.nocookie.net/es.pokemon/images/f/fe/Tipo_bicho.gif/revision/latest?cb=20140127195222";
+        break;
+        case 'DRAGON':
+        $url="http://vignette3.wikia.nocookie.net/es.pokemon/images/0/01/Tipo_drag%C3%B3n.gif/revision/latest?cb=20140127195213";
+        break;
+        case 'ELECTRICO':
+        $url="http://vignette4.wikia.nocookie.net/es.pokemon/images/1/1b/Tipo_el%C3%A9ctrico.gif/revision/latest?cb=20140127195211";
+        break;
+        case 'FANTASMA':
+        $url="http://vignette1.wikia.nocookie.net/es.pokemon/images/4/47/Tipo_fantasma.gif/revision/latest?cb=20140127195210";
+        break;
+        case 'HIELO':
+        $url="http://vignette4.wikia.nocookie.net/es.pokemon/images/4/40/Tipo_hielo.gif/revision/latest?cb=20140127195200";
+        break;
+        case 'LUCHA':
+        $url="http://vignette1.wikia.nocookie.net/es.pokemon/images/b/b7/Tipo_lucha.gif/revision/latest?cb=20140127195159";
+        break;
+        case 'NORMAL':
+        $url="http://vignette3.wikia.nocookie.net/es.pokemon/images/3/32/Tipo_normal.gif/revision/latest?cb=20140127195158";
+        break;
+        case 'HADA':
+        $url="http://vignette2.wikia.nocookie.net/es.pokemon/images/b/bc/Tipo_hada.gif/revision/latest?cb=20140127195208";
+        break;
+        case 'PSIQUICO':
+        $url="http://vignette4.wikia.nocookie.net/es.pokemon/images/1/15/Tipo_ps%C3%ADquico.gif/revision/latest?cb=20140127195156";
+        break;
+        case 'ROCA':
+        $url="http://vignette2.wikia.nocookie.net/es.pokemon/images/e/e0/Tipo_roca.gif/revision/latest?cb=20140127195144";
+        break;
+        case 'TIERRA':
+        $url="http://vignette3.wikia.nocookie.net/es.pokemon/images/1/1d/Tipo_tierra.gif/revision/latest?cb=20140127195143";
+        break;
+        case 'N/A':
+        $url="http://chk.edu.mx/2012/images/FONDO%20BLANCO%20NUEVO.gif";
+        break;
         }
         return $url;
-    }
+        }
 
     $pdf->Output();
 ?>

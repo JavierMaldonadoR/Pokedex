@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ejemplo Materialize</title>
+    <title>Pokedex</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link rel="icon" type="image/png" href="http://wahackforo.com/images/smilies/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
     <nav>
       <div class="nav-wrapper red">
-        <a href="/Pokedex/pokedex.php" class="brand-logo left">Pokedex</a>
+        <a href="/Pokedex/pokedex.php" class="brand-logo left">&nbsp;<img src="Pokedex.png" alt=""></a>
         <a href="/Pokedex/Pokedex.php" data-activates="mobile" class="button-collapse right"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li>
+            <form action="pokedex.php?search=" method="GET">
+              <input type="search" name="search" id="" placeholder="BUSCAR">
+            </form>
+          </li>          
           <li class="active"><a class="dropdown-button" data-activates="dropdown2">Pokedex<i class="material-icons right">arrow_drop_down</i></a></li>
           <li><a href="tipos.php" >Tipos Elementales</a></li>
           <li><a class="dropdown-button" data-activates="dropdown3">Exportar a PDF<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -42,9 +48,9 @@
   <section>
     <?php
     // conectar
-    $m = new MongoClient();
+    $m = new MongoClient( "mongodb://root:root@ds019482.mlab.com:19482/pokemon");
     // seleccionar una base de datos
-    $db = $m->Pokemon;
+    $db = $m->pokemon;
     // seleccionar una colección (equivalente a una tabla en una base de datos relacional)
     $colección = $db->Pokedex;
     // encontrar todo lo que haya en la colección
@@ -151,11 +157,11 @@
       </script>
     </section>
   </body>
-  <footer class="page-footer grey darken-3">
-    <div class="footer-copyright">
-      <div class="container">
-        © 2016 Javier Maldonado
-      </div>
-    </div>
-  </footer>
+<footer class="page-footer grey darken-3">
+<div class="footer-copyright">
+  <div class="container">
+    © 2016 Pokedex
+  </div>
+</div>
+</footer>
 </html>
